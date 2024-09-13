@@ -5,15 +5,9 @@ const fs = require('fs');
 
 function getHighestNumberOfTimesDismissedPlayers(){
     let playersList = {};                // created an object
-    let matchsId = new Set();
-    for(let index=0;index<matches.length;index++){ 
-                                             // iterate the matches data
-        let id = matches[index].id;
-        matchsId.add(id);
-    }
+    
         for(let j=0;j<deliveries.length;j++){         // iterate the deliveries data
             let matchId = deliveries[j].match_id;
-            if(matchsId.has(matchId)){                         // check the matchid with deliveries id
                 let dismissed  = deliveries[j].player_dismissed;
                 if(dismissed!==null){                       // check only dismissed is not null
                     let bowlerName = deliveries[j].bowler;
@@ -26,7 +20,7 @@ function getHighestNumberOfTimesDismissedPlayers(){
                     }
                     playersList[dismissedPlayer].count+=1;   // increment the count
                 }
-            }
+            
         }
     
     
