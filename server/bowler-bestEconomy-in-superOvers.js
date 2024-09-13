@@ -5,32 +5,27 @@ const fs = require("fs");
 
 function getBestEconomyBowlerInSuperOvers(){
     let bowlerList ={};
-    let matchesId = new Set();
-    for(let index=0;index<matches.length;index++){    // iterate the matches data and store in ids in set
-        let id = matches[index].id;
-        matchesId.add(id);
-    }
+   
         for(j=0;j<deliveries.length;j++){   // iterate the deliveries data
-            let matchId = deliveries[j].match_id;
-            if(matchesId.has(matchId)){                     // check matchid with deliveries id
-              
+                                       
                let superOverRuns = deliveries[j].is_super_over;
-               if(superOverRuns>0){                     // count only super over
+               if(superOverRuns===1){                     // count only super over
                 let bowler = deliveries[j].bowler;
                 let wideBall = deliveries[j].wide_runs;
                 let noBall = deliveries[j].noball_runs;
+                let runs = deliveries[j].total_runs;
                if(!bowlerList.hasOwnProperty(bowler)){      // cheking the bowler property
                 bowlerList[bowler]={
                     totalRunsInSuperOver:0,
                     totalBallsInSuperOver:0
                 }
                }
-              bowlerList[bowler].totalRunsInSuperOver +=superOverRuns;
+              bowlerList[bowler].totalRunsInSuperOver +=runs;
               if(wideBall==0&&noBall===0){                      // add ball if   not a wide and noball
                 bowlerList[bowler].totalBallsInSuperOver+=1;
               }
             }
-        }
+        
         }
     
   
@@ -43,7 +38,7 @@ function getBestEconomyBowlerInSuperOvers(){
     let bowlerData = bowlerList[bowler];       // iterate the object
     
     let totalRuns = bowlerData.totalRunsInSuperOver;
-    let totalBalls = bowlerData.totalBallsInSuperOver;
+    let totalBalls = (bowlerData.totalBallsInSuperOver/6);
     let totalEconomy =0;
     if(totalBalls>0){                              // calculate the economy if balls are more than zero
         totalEconomy = (totalRuns/totalBalls);
