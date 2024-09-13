@@ -2,43 +2,43 @@
   [
     {
       "name": "RN ten Doeschate",
-      "economyRate": 0.6666666666666666
+      "economyRate": 4
     },
     {
       "name": "J Yadav",
-      "economyRate": 0.6904761904761905
+      "economyRate": 4.142857142857143
     },
     {
       "name": "V Kohli",
-      "economyRate": 0.9090909090909091
+      "economyRate": 5.454545454545455
     },
     {
       "name": "R Ashwin",
-      "economyRate": 0.9828326180257511
+      "economyRate": 5.896995708154506
     },
     {
       "name": "S Nadeem",
-      "economyRate": 1.0238095238095237
+      "economyRate": 6.142857142857143
     },
     {
       "name": "Parvez Rasool",
-      "economyRate": 1.0333333333333334
+      "economyRate": 6.2
     },
     {
       "name": "MC Henriques",
-      "economyRate": 1.1156462585034013
+      "economyRate": 6.6938775510204085
     },
     {
       "name": "Z Khan",
-      "economyRate": 1.119718309859155
+      "economyRate": 6.718309859154929
     },
     {
       "name": "M Vijay",
-      "economyRate": 1.1666666666666667
+      "economyRate": 7
     },
     {
       "name": "Bipul Sharma",
-      "economyRate": 1.1904761904761905
+      "economyRate": 7.142857142857143
     }
   ]
 ]
