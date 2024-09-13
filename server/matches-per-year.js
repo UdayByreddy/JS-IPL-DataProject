@@ -35,4 +35,4 @@ function getNoOfMatchesPlayedByTeamInAllSeasons(){
 
 const matchesPlayed = getNoOfMatchesPlayedByTeamInAllSeasons();
 
-fs.writeFileSync("../public/output/matchesPerYear.json",JSON.stringify(matchesPlayed, null, 2));  // write the output in the mention path
+fs.writeFileSync("../public/output/matchesPerYear.json",JSON.stringify(matchesPlayed, null, 2));  // written the output in the mention path
