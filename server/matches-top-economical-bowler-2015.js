@@ -51,7 +51,7 @@ function getTop10EconomicalBowlers(season){
     let topEconomicalBowlers=[];                           // intize the array
     for(let bowler in economicalBowlers){                        
         let totalRuns = economicalBowlers[bowler].totalRuns;
-        let ballsBowled = economicalBowlers[bowler].ballsBowled;
+        let ballsBowled = (economicalBowlers[bowler].ballsBowled/6);
         if(ballsBowled>0){                                           // only divide when balls are greather than 0
             let economany = totalRuns/ballsBowled;
             topEconomicalBowlers.push({name:bowler,economyRate:economany});   // calulate and pushing the economy
