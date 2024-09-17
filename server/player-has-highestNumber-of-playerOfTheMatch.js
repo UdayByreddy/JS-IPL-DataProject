@@ -1,10 +1,7 @@
-const matches = require("../data/jsonData/matches.json");
-const fs = require("fs");
-//const deliveries = require("../JsonData/deliveries.json");
 
 // Find a player who has won the highest number of Player of the Match awards for each season
 
-function getHighestNumberPlayerOfMatchAwardForSeason(){
+function getHighestNumberPlayerOfMatchAwardForSeason(matches){
     let playerOfMatchBySeason={};                        // created an object
     for(let i=0;i<matches.length;i++){
         let playerOfTheMatch = matches[i].player_of_match;       
