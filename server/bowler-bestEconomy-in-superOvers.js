@@ -1,9 +1,8 @@
-const matches = require("../data/jsonData/matches.json");
-const deliveries = require("../data/jsonData/deliveries.json");
+
 const fs = require("fs");
 //  Find the bowler with the best economy in super overs
 
-function getBestEconomyBowlerInSuperOvers(){
+function getBestEconomyBowlerInSuperOvers(deliveries){
     let bowlerList ={};
    
         for(j=0;j<deliveries.length;j++){   // iterate the deliveries data
@@ -56,6 +55,4 @@ function getBestEconomyBowlerInSuperOvers(){
 
 }
 
-const bestEconomyBowlerInSuperOver = getBestEconomyBowlerInSuperOvers();
-fs.writeFileSync("../public/output/bowlerBestEconomyInsuperOver.json",JSON.stringify(bestEconomyBowlerInSuperOver,null,2)); // written the output in the mention path
 module.exports = {getBestEconomyBowlerInSuperOvers};
