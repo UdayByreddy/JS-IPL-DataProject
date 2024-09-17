@@ -1,9 +1,7 @@
-const matches =  require("../data/jsonData/matches.json");
-const deliveries = require("../data/jsonData/deliveries.json");
-const fs = require('fs');
+
 //Find the highest number of times one player has been dismissed by another player
 
-function getHighestNumberOfTimesDismissedPlayers(){
+function getHighestNumberOfTimesDismissedPlayers(deliveries){
     let playersList = {};                // created an object
     
         for(let j=0;j<deliveries.length;j++){         // iterate the deliveries data
@@ -37,7 +35,6 @@ function getHighestNumberOfTimesDismissedPlayers(){
    return maxDissalPlayer;
 
 }
-const maxDissalPlayer = getHighestNumberOfTimesDismissedPlayers();
-fs.writeFileSync("../public/output/highestNumberOfDismissed.json",JSON.stringify(maxDissalPlayer,null,2)); // written the output in the mention path
+
 
 module.exports ={getHighestNumberOfTimesDismissedPlayers};
