@@ -1,9 +1,7 @@
-const matches = require("../data/jsonData/matches.json");
-const deliveries = require("../data/jsonData/deliveries.json");
-const fs = require("fs");
+
 //Extra runs conceded per team in the year 2016
 
-function getExtraRunsByTeamInaSeason(season){
+function getExtraRunsByTeamInaSeason(matches,deliveries,season){
 
       if(season===undefined|| season===null){
         return "Please provide the season";
@@ -46,9 +44,6 @@ function getExtraRunsByTeamInaSeason(season){
             return extraRunsByTeam;  // returing the extraRuns object
         }
     
-const extraRunsByTeam = getExtraRunsByTeamInaSeason(2016);
-
-fs.writeFileSync("../public/output/matchesExtraRuns.json",JSON.stringify(extraRunsByTeam,null,2)); // written the output in the mention path
 
 
 module.exports = {getExtraRunsByTeamInaSeason};
