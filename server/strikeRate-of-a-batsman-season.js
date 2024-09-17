@@ -1,9 +1,7 @@
-const matches = require("../data/jsonData/matches.json");
-const deliveries = require("../data/jsonData/deliveries.json");
-const fs = require("fs");
+
 //Find the strike rate of a batsman for each season
 
-function getStrikeRateOfBatsmanBySeason(){
+function getStrikeRateOfBatsmanBySeason(matches,deliveries){
     const batsmanBySeason={};    // create an object 
 
     for(let i=0;i<matches.length;i++){
@@ -64,8 +62,5 @@ function getStrikeRateOfBatsmanBySeason(){
         }
         return strikeRateOfBatsmanBySeason;
 }
-const strikeRateOfBatsmanBySeason = getStrikeRateOfBatsmanBySeason();
-
-fs.writeFileSync("../public/output/strikeRateOfEachBatmanInSeason.json",JSON.stringify(strikeRateOfBatsmanBySeason,null,2)); // written the output in the mention path
 
 module.exports = {getStrikeRateOfBatsmanBySeason};
