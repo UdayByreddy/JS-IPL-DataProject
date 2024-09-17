@@ -1,44 +1,42 @@
 [
-  [
-    {
-      "name": "RN ten Doeschate",
-      "economyRate": 4
-    },
-    {
-      "name": "J Yadav",
-      "economyRate": 4.142857142857143
-    },
-    {
-      "name": "V Kohli",
-      "economyRate": 5.454545454545455
-    },
-    {
-      "name": "R Ashwin",
-      "economyRate": 5.896995708154506
-    },
-    {
-      "name": "S Nadeem",
-      "economyRate": 6.142857142857143
-    },
-    {
-      "name": "Parvez Rasool",
-      "economyRate": 6.2
-    },
-    {
-      "name": "MC Henriques",
-      "economyRate": 6.6938775510204085
-    },
-    {
-      "name": "Z Khan",
-      "economyRate": 6.718309859154929
-    },
-    {
-      "name": "M Vijay",
-      "economyRate": 7
-    },
-    {
-      "name": "Bipul Sharma",
-      "economyRate": 7.142857142857143
-    }
-  ]
+  {
+    "name": "RN ten Doeschate",
+    "economyRate": 4
+  },
+  {
+    "name": "J Yadav",
+    "economyRate": 4.142857142857143
+  },
+  {
+    "name": "V Kohli",
+    "economyRate": 5.454545454545455
+  },
+  {
+    "name": "R Ashwin",
+    "economyRate": 5.871244635193133
+  },
+  {
+    "name": "S Nadeem",
+    "economyRate": 6.142857142857143
+  },
+  {
+    "name": "Parvez Rasool",
+    "economyRate": 6.2
+  },
+  {
+    "name": "MC Henriques",
+    "economyRate": 6.448979591836735
+  },
+  {
+    "name": "Z Khan",
+    "economyRate": 6.591549295774648
+  },
+  {
+    "name": "MA Starc",
+    "economyRate": 6.984
+  },
+  {
+    "name": "M Vijay",
+    "economyRate": 7
+  }
 ]
