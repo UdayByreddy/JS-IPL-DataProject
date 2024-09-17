@@ -1,12 +1,7 @@
-const matches = require("../data/jsonData/matches.json");
-
-const deliveries = require("../data/jsonData/deliveries.json");
-
-const fs = require("fs");
 
 //Top 10 economical bowlers in the year 2015
 
-function getTop10EconomicalBowlers(season){
+function getTop10EconomicalBowlers(matches,deliveries,season){
 
     if(season===undefined|| season===null){
         return "Please provide the season";
@@ -37,8 +32,12 @@ function getTop10EconomicalBowlers(season){
                     let runs = deliveries[j].total_runs;
                     let wideRun = deliveries[j].wide_runs;
                     let extraRun = deliveries[j].extra_runs;
+                    let legByes = deliveries[j].legbye_runs;
+                    let byRuns = deliveries[j].bye_runs;
+                    if(legByes===0&&byRuns===0){
 
-                    economicalBowlers[bowlerName].totalRuns+=runs;  // adding the runs
+                        economicalBowlers[bowlerName].totalRuns+=runs;  // adding the runs
+                    }
                     if(wideRun===0&&extraRun===0){                   // wide and extrarun should not be consider
                         economicalBowlers[bowlerName].ballsBowled+=1;
                     }
@@ -63,11 +62,9 @@ function getTop10EconomicalBowlers(season){
     topEconomicalBowlers.sort((a,b)=>
         a.economyRate-b.economyRate);                    // sorting the array
    
-        return [topEconomicalBowlers.slice(0,10)];   // returing the top 10 bowlers
+        return topEconomicalBowlers.slice(0,10);   // returing the top 10 bowlers
 }
 
-const topEconomicalBowlers = getTop10EconomicalBowlers(2015);
-fs.writeFileSync("../public/output/matchesTopEconomicalBowlers.json",JSON.stringify(topEconomicalBowlers,null,2)); // written the output in the mention path
 
 module.exports = {getTop10EconomicalBowlers};
 
