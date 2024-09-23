@@ -3,7 +3,7 @@
 
 function getExtraRunsByTeamInaSeason(matches,deliveries,season){
 
-      if(season===undefined|| season===null){
+      if(season){
         return "Please provide the season";
       }
     let extraRunsByTeam = {};               // creating the object
