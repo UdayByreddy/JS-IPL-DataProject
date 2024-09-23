@@ -38,7 +38,4 @@ function getHighestNumberPlayerOfMatchAwardForSeason(matches){
    }
   return highestNumberOfPlayerOfMatchAwardBySeason;
 }
-
-const highestNumberOfPlayerOfMatchAwardBySeason = getHighestNumberPlayerOfMatchAwardForSeason();
-fs.writeFileSync("../public/output/highestNumberOfPlayerOfMatch.json",JSON.stringify(highestNumberOfPlayerOfMatchAwardBySeason,null,2)); // written the output in the mention path
 module.exports = {getHighestNumberPlayerOfMatchAwardForSeason};
