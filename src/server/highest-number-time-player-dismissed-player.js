@@ -23,16 +23,16 @@ function getHighestNumberOfTimesDismissedPlayers(deliveries){
     
     
 
-    let maxDissalPlayer = {player:'',count:0};    // creating the object
+    let mostDismissedPlayer = {player:'',count:0};    // creating the object
 
     for(let player in playersList){
-        if(playersList[player].count>maxDissalPlayer.count){   // if previous count is more the previous count 
-            maxDissalPlayer.player=player;
-            maxDissalPlayer.count=playersList[player].count;
+        if(playersList[player].count>mostDismissedPlayer.count){   // if previous count is more the previous count 
+            mostDismissedPlayer.player=player;
+            mostDismissedPlayer.count=playersList[player].count;
         }
     }
    
-   return maxDissalPlayer;
+   return mostDismissedPlayer;
 
 }
 
