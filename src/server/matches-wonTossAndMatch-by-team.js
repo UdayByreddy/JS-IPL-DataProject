@@ -6,7 +6,7 @@ function getAllTeamsWhoWonMatchAndToss(matches){
     for(let i=0;i<matches.length;i++){
         let tossWinTeam = matches[i].toss_winner;
         let matchWinTeam = matches[i].winner;
-        if(matchWinTeam===undefined||tossWinTeam===undefined){  // checking if undefined or not 
+        if(matchWinTeam){  // checking if undefined or not 
             continue;
         }
 
