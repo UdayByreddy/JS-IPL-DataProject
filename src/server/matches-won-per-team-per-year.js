@@ -6,7 +6,7 @@ function getAllIPLWonMatchesForSeason(matches){
 
     for(let index=0;index<matches.length;index++){
         let winner = matches[index].winner;
-        if(winner){   // checking if winner is null or undefined
+        if(!winner){   // checking if winner is null or undefined
             continue;
         }
         if(!wonMatches.hasOwnProperty(winner)){     // checking winner team is inside the object or not
