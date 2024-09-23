@@ -6,7 +6,7 @@ function getHighestNumberPlayerOfMatchAwardForSeason(matches){
     for(let i=0;i<matches.length;i++){
         let playerOfTheMatch = matches[i].player_of_match;       
         let season = matches[i].season;
-        if(season===undefined){
+        if(season){
             continue;
         }
         if(!playerOfMatchBySeason.hasOwnProperty(season)){   // checking if season having an object
@@ -17,25 +17,28 @@ function getHighestNumberPlayerOfMatchAwardForSeason(matches){
         }
         playerOfMatchBySeason[season][playerOfTheMatch]+=1;  // increment the player
     }
-   // console.log(playerOfMatchBySeason);
+   
 
-   let highestNumberOfPlayerOfMatchAwardBySeason={};    // againg creating the object
-   for(let season in playerOfMatchBySeason){
-    if(!highestNumberOfPlayerOfMatchAwardBySeason.hasOwnProperty(season)){    // checking the season object inside the object
-        highestNumberOfPlayerOfMatchAwardBySeason[season]={
-            player:'',
-            count:0
-        }
-        for(let player in playerOfMatchBySeason[season]){                      // iterate player based on season
-            let count = playerOfMatchBySeason[season][player];
-            if(count>highestNumberOfPlayerOfMatchAwardBySeason[season].count){        // if count of player is greather than before the player
-                highestNumberOfPlayerOfMatchAwardBySeason[season].player=player;
-                highestNumberOfPlayerOfMatchAwardBySeason[season].count = count;       // replacing the player
+    let playerOfTheMatchAwardsBySeason = {}; // Creating the object
+
+    for (let season in playerOfMatchBySeason) {
+        if (!playerOfTheMatchAwardsBySeason.hasOwnProperty(season)) { // Checking if the season already exists in the object
+            playerOfTheMatchAwardsBySeason[season] = {
+                player: '',
+                awardCount: 0
+            };
+            
+            for (let player in playerOfMatchBySeason[season]) { // Iterate players based on season
+                let awardCount = playerOfMatchBySeason[season][player];
+                if (awardCount > playerOfTheMatchAwardsBySeason[season].awardCount) { // If the player's count is greater than the current highest
+                    playerOfTheMatchAwardsBySeason[season].player = player;
+                    playerOfTheMatchAwardsBySeason[season].awardCount = awardCount; // Update the player with the highest count
+                }
             }
         }
     }
-
-   }
-  return highestNumberOfPlayerOfMatchAwardBySeason;
+    
+    return playerOfTheMatchAwardsBySeason;
+    
 }
 module.exports = {getHighestNumberPlayerOfMatchAwardForSeason};
