@@ -3,7 +3,7 @@
 
 function getTop10EconomicalBowlers(matches,deliveries,season){
 
-    if(season){
+    if(!season){
         return "Please provide the season";
     }
     const economicalBowlers = {};       // creating the object
@@ -57,7 +57,6 @@ function getTop10EconomicalBowlers(matches,deliveries,season){
 
         }
     }
-    //console.log(topEconomicalBowlers);
 
     topEconomicalBowlers.sort((a,b)=>
         a.economyRate-b.economyRate);                    // sorting the array
