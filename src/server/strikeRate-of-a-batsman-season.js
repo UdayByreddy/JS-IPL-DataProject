@@ -10,7 +10,7 @@ function getStrikeRateOfBatsmanBySeason(matches,deliveries){
         let matchId = deliveries[j].match_id;
         if(id===matchId){                              // checking id with matchId
             let season = matches[i].season;
-            if(season===undefined){
+            if(season){
                 continue;
             }
             if(!batsmanBySeason.hasOwnProperty(season)){  // checking the season property
