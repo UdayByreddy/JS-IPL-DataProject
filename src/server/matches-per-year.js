@@ -7,7 +7,7 @@ function getNoOfMatchesPlayedByTeamInAllSeasons(matches){
         let team1 = matches[index].team1;          // intalized the variables
         let team2 = matches[index].team2;
         let season = matches[index].season;
-        if(season===undefined){         // continue the loop if season is undefined
+        if(season){         // continue the loop if season is undefined
           continue;
         }
         if(!matchesPlayed.hasOwnProperty(season)){      // checking if season is present or not
