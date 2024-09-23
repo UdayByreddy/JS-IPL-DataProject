@@ -3,7 +3,7 @@
 
 function getTop10EconomicalBowlers(matches,deliveries,season){
 
-    if(season===undefined|| season===null){
+    if(season){
         return "Please provide the season";
     }
     const economicalBowlers = {};       // creating the object
