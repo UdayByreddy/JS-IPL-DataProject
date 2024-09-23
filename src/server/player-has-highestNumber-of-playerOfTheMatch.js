@@ -6,7 +6,7 @@ function getHighestNumberPlayerOfMatchAwardForSeason(matches){
     for(let i=0;i<matches.length;i++){
         let playerOfTheMatch = matches[i].player_of_match;       
         let season = matches[i].season;
-        if(season){
+        if(!season){
             continue;
         }
         if(!playerOfMatchBySeason.hasOwnProperty(season)){   // checking if season having an object
